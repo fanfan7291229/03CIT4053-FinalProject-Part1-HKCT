@@ -202,7 +202,214 @@
   <!-- End of Primary Navigation Bar -->
 
   <!-- Start of Main Content Wrapper -->
-  
+  <!-- Start of Sub-Page Grey Title Banner: Matches official HKCS light-grey header bar -->
+  <section class="py-4" style="background-color: #e2e2e2;">
+    <div class="container">
+      <h1 class="h3 fw-normal mb-0 text-dark">Online Application Forms</h1>
+    </div>
+  </section>
+  <!-- End of Sub-Page Grey Title Banner -->
+
+  <!-- Start of Main Membership Directory Section: Reproduces official HKCS Join Us layout -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <!-- Society Membership Eligibility Statement -->
+      <div class="mb-5">
+        <h2 class="h5 fw-bold text-dark mb-3">Hong Kong Computer Society Membership</h2>
+        <p class="text-secondary small" style="line-height: 1.7;">
+          Membership is restricted to persons who maintain a keen interest in the objects of the Society and having
+          succeeded in satisfying the Membership Requirements as prescribed by HKCS for a particular class of
+          membership. There is no restriction upon the total number of members.
+        </p>
+      </div>
+
+      <!-- Optional Feedback Alert Box (hidden until populated by JS or backend) -->
+      <div id="regMessage" class="alert mx-auto mb-4 d-none" style="max-width: 680px;" role="alert"></div>
+
+      <!-- Group 1: Application Forms (6 Centered Deep-Blue Rectangular Buttons) -->
+      <div class="text-center mb-5">
+        <h3 class="h6 fw-bold text-dark mb-3">Application Forms</h3>
+        <div class="d-flex flex-column align-items-center gap-3">
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="FULL / ASSOCIATE MEMBERSHIP">
+            FULL / ASSOCIATE MEMBERSHIP
+          </button>
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="GENERAL MEMBERSHIP">
+            GENERAL MEMBERSHIP
+          </button>
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="STUDENT MEMBERSHIP">
+            STUDENT MEMBERSHIP
+          </button>
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="CORPORATE MEMBERSHIP">
+            CORPORATE MEMBERSHIP
+          </button>
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="CORPORATE MEMBERSHIP (For EdTech)">
+            CORPORATE MEMBERSHIP (For EdTech)
+          </button>
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="RRPQ APPLICATION">
+            RRPQ APPLICATION
+          </button>
+        </div>
+      </div>
+
+      <!-- Group 2: Membership Upgrade -->
+      <div class="text-center mb-5">
+        <h3 class="h6 fw-bold text-dark mb-3">Membership Upgrade</h3>
+        <div class="d-flex flex-column align-items-center">
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="UPGRADE APPLICATION FORM">
+            UPGRADE APPLICATION FORM
+          </button>
+        </div>
+      </div>
+
+      <!-- Group 3: Individual Member Information Update -->
+      <div class="text-center mb-4">
+        <h3 class="h6 fw-bold text-dark mb-3">Individual Member Information Update</h3>
+        <div class="d-flex flex-column align-items-center">
+          <button type="button" class="btn text-white fw-bold text-uppercase rounded-0 py-2 px-3 hkcs-form-trigger"
+            style="background-color: #10069f; width: 100%; max-width: 340px; font-size: 0.82rem; letter-spacing: 0.5px;"
+            data-form-type="UPDATE INFORMATION FORM">
+            UPDATE INFORMATION FORM
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Horizontal Divider matching official page -->
+      <hr class="mt-5 mb-4">
+
+      <!-- Start of Interactive Online Registration Form Panel (Revealed when any button above is clicked) -->
+      <div id="applicationFormContainer" class="mx-auto mt-4 p-4 p-md-5 border bg-light d-none"
+        style="max-width: 680px; border-top: 4px solid #10069f !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+          <h4 class="h5 fw-bold mb-0" style="color: #10069f;">Online Membership Application</h4>
+          <button type="button" class="btn-close" id="closeApplicationForm" aria-label="Close form"></button>
+        </div>
+        <p class="small text-muted mb-4">Complete the form below to submit your selected HKCS application and create
+          your member portal account.</p>
+
+        <form id="registerForm" action="#" method="post">
+          <div class="row g-3">
+            <!-- Pre-selected Application Form Category -->
+            <div class="col-12">
+              <label for="applicationType" class="form-label fw-bold small">Selected Application Form</label>
+              <input type="text" class="form-control bg-white fw-bold" id="applicationType" name="application_type"
+                value="STUDENT MEMBERSHIP" readonly required>
+            </div>
+
+            <!-- Applicant Full Name -->
+            <div class="col-md-6">
+              <label for="fullName" class="form-label fw-bold small">Full Name (English)</label>
+              <input type="text" class="form-control" id="fullName" name="full_name"
+                placeholder="e.g., WONG Lai Man Max" required>
+            </div>
+
+            <!-- Applicant Email -->
+            <div class="col-md-6">
+              <label for="regEmail" class="form-label fw-bold small">Email Address</label>
+              <input type="email" class="form-control" id="regEmail" name="reg_email"
+                placeholder="e.g., maxwong@example.com" required>
+            </div>
+
+            <!-- Institution or Organization -->
+            <div class="col-md-6">
+              <label for="institution" class="form-label fw-bold small">Institution / Organization</label>
+              <input type="text" class="form-control" id="institution" name="institution"
+                placeholder="e.g., Hong Kong College of Technology" required>
+            </div>
+
+            <!-- Contact Phone -->
+            <div class="col-md-6">
+              <label for="phone" class="form-label fw-bold small">Contact Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g., 9123 4567" required>
+            </div>
+
+            <!-- Portal Password -->
+            <div class="col-md-6">
+              <label for="regPassword" class="form-label fw-bold small">Create Portal Password</label>
+              <input type="password" class="form-control" id="regPassword" name="reg_password"
+                placeholder="Minimum 8 characters" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="col-md-6">
+              <label for="regConfirmPassword" class="form-label fw-bold small">Confirm Password</label>
+              <input type="password" class="form-control" id="regConfirmPassword" name="reg_confirm_password"
+                placeholder="Re-enter password" required>
+            </div>
+
+            <!-- Terms Agreement -->
+            <div class="col-12 mt-2">
+              <div class="form-check small">
+                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                <label class="form-check-label text-muted" for="termsCheck">
+                  I declare that the information provided is accurate and agree to the HKCS Membership Regulations.
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn text-white fw-bold rounded-0 w-100 py-2"
+                style="background-color: #10069f;">
+                SUBMIT APPLICATION
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Quick Links to Login and FAQ Pages -->
+        <div class="text-center small text-muted mt-3 pt-3 border-top">
+          Already an HKCS member? <a href="login.html" class="fw-bold text-decoration-none"
+            style="color: #10069f;">Member Login</a>
+          <span class="mx-2">|</span>
+          Questions about eligibility? <a href="faq.html" class="fw-bold text-decoration-none"
+            style="color: #10069f;">View FAQ</a>
+        </div>
+      </div>
+      <!-- End of Interactive Online Registration Form Panel -->
+    </div>
+  </section>
+  <!-- End of Main Membership Directory Section -->
+
+  <!-- Inline script connecting the 8 official application buttons to the interactive registration form -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const triggers = document.querySelectorAll(".hkcs-form-trigger");
+      const formContainer = document.getElementById("applicationFormContainer");
+      const applicationTypeInput = document.getElementById("applicationType");
+      const closeBtn = document.getElementById("closeApplicationForm");
+
+      triggers.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const selectedType = this.getAttribute("data-form-type");
+          if (applicationTypeInput && formContainer) {
+            applicationTypeInput.value = selectedType;
+            formContainer.classList.remove("d-none");
+            formContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        });
+      });
+
+      if (closeBtn && formContainer) {
+        closeBtn.addEventListener("click", function () {
+          formContainer.classList.add("d-none");
+        });
+      }
+    });
+  </script>
   <!-- End of Main Content Wrapper -->
 
   <footer>

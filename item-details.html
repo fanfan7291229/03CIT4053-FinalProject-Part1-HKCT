@@ -202,7 +202,163 @@
   <!-- End of Primary Navigation Bar -->
 
   <!-- Start of Main Content Wrapper -->
-  
+
+  <!-- Start of Sub-Page Grey Title Banner with Breadcrumb Navigation -->
+  <section class="py-4" style="background-color: #e2e2e2;">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb small mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none" style="color: #10069f;">Home</a>
+          </li>
+          <li class="breadcrumb-item"><a href="events.html" class="text-decoration-none" style="color: #10069f;">Events
+              &amp; Programmes</a></li>
+          <li class="breadcrumb-item active text-dark" aria-current="page">Event Details</li>
+        </ol>
+      </nav>
+      <h1 class="h3 fw-normal mb-0 text-dark">Cybersecurity &amp; AI Summit 2026</h1>
+    </div>
+  </section>
+  <!-- End of Sub-Page Grey Title Banner -->
+
+  <!-- Start of Event Detail Content Section: Two-column layout with schedule table and registration sidebar -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Left Main Column (8 cols): Banner Image, Overview, and Programme Rundown Table -->
+        <div class="col-lg-8">
+          <!-- Local Event Banner Image -->
+          <div class="mb-4 border">
+            <img src="assets/images/event-cyber-ai.jpg" alt="Cybersecurity &amp; AI Summit 2026" class="img-fluid w-100"
+              style="max-height: 360px; object-fit: cover;">
+          </div>
+
+          <!-- Event Overview -->
+          <div class="mb-4">
+            <span class="badge text-white mb-2" style="background-color: var(--hkcs-accent);">
+              Flagship Summit
+            </span>
+            <h2 class="h4 fw-bold text-dark mb-3">Programme Overview</h2>
+            <p class="text-secondary" style="line-height: 1.75;">
+              Explore how organizations across Hong Kong are securing AI-driven systems, defending critical
+              infrastructure, and aligning governance with evolving cybersecurity standards.
+            </p>
+            <p class="text-secondary" style="line-height: 1.75;">
+              Organized by the Hong Kong Computer Society (HKCS), this flagship session brings together industry
+              leaders, policymakers, security practitioners, and academic researchers to exchange practical frameworks,
+              compliance standards, and emerging digital strategies in Hong Kong.
+            </p>
+          </div>
+
+          <!-- Programme Agenda Table -->
+          <div class="mb-4">
+            <h3 class="h5 fw-bold text-dark mb-3">Programme Rundown</h3>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped small align-middle">
+                <thead class="text-white" style="background-color: #10069f;">
+                  <tr>
+                    <th style="width: 24%;">Time</th>
+                    <th>Session Topic &amp; Speaker</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">09:30 - 10:00</td>
+                    <td>Registration &amp; Morning Networking (iAM Smart Digital Check-in)</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">10:00 - 10:30</td>
+                    <td>Welcome Remarks by HKCS President &amp; Keynote Address</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">10:30 - 12:00</td>
+                    <td>Panel Discussion: Zero-Trust Architecture, AI Governance &amp; Compliance</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">14:00 - 16:30</td>
+                    <td>Technical Breakout Workshops &amp; Industry Case Demonstrations</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">16:30 - 17:00</td>
+                    <td>Interactive Q&amp;A Session, CPD Certificate Issuance &amp; Closing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Back to Events Listing Button -->
+          <div class="pt-2">
+            <a href="events.html" class="btn btn-hkcs-outline rounded-0 px-4">&larr; Back to All Events</a>
+          </div>
+        </div>
+
+        <!-- Right Sidebar Column (4 cols): Event Logistics & Online Seat Reservation Card -->
+        <div class="col-lg-4">
+          <!-- Event Key Information Box -->
+          <div class="p-4 border bg-light mb-4" style="border-top: 4px solid #10069f !important;">
+            <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #10069f;">Event Information</h4>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-3 pb-2 border-bottom">
+                <strong class="d-block text-dark">Date &amp; Time:</strong>
+                <span class="text-secondary">15 December 2026, 09:30 – 17:00 (HKT)</span>
+              </li>
+              <li class="mb-3 pb-2 border-bottom">
+                <strong class="d-block text-dark">Venue:</strong>
+                <span class="text-secondary">Hong Kong Convention and Exhibition Centre, Wan Chai</span>
+              </li>
+              <li class="mb-3 pb-2 border-bottom">
+                <strong class="d-block text-dark">CPD Accreditation:</strong>
+                <span class="text-secondary">6 CPD Hours Accredited</span>
+              </li>
+              <li class="mb-0">
+                <strong class="d-block text-dark">Registration Fee:</strong>
+                <span class="text-secondary">Free for HKCS Members &amp; Student Members; HK$300 for Non-Members</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Seat Reservation Form -->
+          <div class="p-4 border bg-white shadow-sm">
+            <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #10069f;">Reserve Your Seat</h4>
+
+            <!-- Optional RSVP confirmation alert (hidden until populated by JS or backend) -->
+            <div id="rsvpMessage" class="alert alert-success small d-none" role="alert"></div>
+
+            <form id="rsvpForm" action="#" method="post">
+              <div class="mb-3">
+                <label for="attendeeName" class="form-label fw-bold small">Participant Name</label>
+                <input type="text" class="form-control form-control-sm" id="attendeeName" name="attendee_name"
+                  placeholder="e.g., WONG Lai Man Max" required>
+              </div>
+              <div class="mb-3">
+                <label for="attendeeEmail" class="form-label fw-bold small">Email Address</label>
+                <input type="email" class="form-control form-control-sm" id="attendeeEmail" name="attendee_email"
+                  placeholder="e.g., max@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="memberStatus" class="form-label fw-bold small">Participant Category</label>
+                <select class="form-select form-select-sm" id="memberStatus" name="member_status">
+                  <option value="student">HKCS Student Member (Free)</option>
+                  <option value="member">HKCS Full / Associate Member</option>
+                  <option value="non-member">Non-Member / Public Guest</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-hkcs-primary rounded-0 w-100 py-2 small">
+                REGISTER FOR EVENT
+              </button>
+            </form>
+
+            <div class="text-center small text-muted mt-3 pt-2 border-top">
+              Not a member yet? <a href="register.html" class="fw-bold text-decoration-none"
+                style="color: #10069f;">Join HKCS Free</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Event Detail Content Section -->
+
   <!-- End of Main Content Wrapper -->
 
   <footer>

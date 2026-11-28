@@ -202,7 +202,244 @@
   <!-- End of Primary Navigation Bar -->
 
   <!-- Start of Main Content Wrapper -->
+  <!-- Start of Sub-Page Grey Title Banner: Matches official HKCS light-grey inner page header -->
+  <section class="py-4" style="background-color: #e2e2e2;">
+    <div class="container">
+      <h1 class="h3 fw-normal mb-0 text-dark">Events &amp; Professional Programmes</h1>
+    </div>
+  </section>
+  <!-- End of Sub-Page Grey Title Banner -->
 
+  <!-- Start of Events Listing Section: Filterable grid showcasing all HKCS events and courses -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <!-- Section Intro & Category Filter Bar -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom">
+        <div>
+          <h2 class="h5 fw-bold text-dark mb-1">Upcoming Conferences, Awards &amp; CPD Seminars</h2>
+          <p class="text-muted small mb-0">Explore industry events and earn Continuing Professional Development (CPD)
+            hours</p>
+        </div>
+
+        <!-- Interactive Category Filter Buttons (Pure Bootstrap + Vanilla JS) -->
+        <div class="btn-group flex-wrap" role="group" aria-label="Event category filter">
+          <button type="button" class="btn btn-sm btn-hkcs-primary event-filter-btn active" data-filter="all">All
+            Events</button>
+          <button type="button" class="btn btn-sm btn-hkcs-outline event-filter-btn"
+            data-filter="cybersecurity">Cybersecurity</button>
+          <button type="button" class="btn btn-sm btn-hkcs-outline event-filter-btn" data-filter="award">Awards</button>
+          <button type="button" class="btn btn-sm btn-hkcs-outline event-filter-btn"
+            data-filter="conference">Conferences</button>
+          <button type="button" class="btn btn-sm btn-hkcs-outline event-filter-btn" data-filter="student">Student &amp;
+            Career</button>
+        </div>
+      </div>
+
+      <!-- Responsive Event Cards Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="eventsListGrid">
+        <!-- Event 1 -->
+        <div class="col event-grid-item" data-category="cybersecurity">
+          <div class="card h-100 hkcs-card overflow-hidden">
+            <img src="assets/images/event-cyber-ai.jpg" class="card-img-top" alt="Cybersecurity &amp; AI Summit 2026"
+              style="height: 170px; object-fit: cover;">
+
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge text-white" style="background-color: var(--hkcs-accent);">
+                  Flagship Summit
+                </span>
+                <span class="badge bg-light text-dark border">
+                  6 CPD Hours
+                </span>
+              </div>
+
+              <h5 class="card-title fw-bold mb-2" style="color: var(--hkcs-primary); font-size: 1.05rem;">
+                Cybersecurity &amp; AI Summit 2026
+              </h5>
+
+              <p class="small text-dark fw-semibold mb-1">
+                Date: 15 December 2026, 09:30 – 17:00
+              </p>
+              <p class="small text-muted mb-3">
+                Venue: HKCEC, Wan Chai
+              </p>
+
+              <p class="card-text small text-secondary flex-grow-1">
+                Explore how organizations across Hong Kong are securing AI-driven systems, defending critical
+                infrastructure, and aligning governance with cybersecurity standards.
+              </p>
+
+              <div class="pt-3 border-top mt-2 d-flex justify-content-between align-items-center">
+                <span class="small fw-bold text-muted">Free for Members</span>
+                <a href="event-detail.html?id=2" class="btn btn-sm btn-hkcs-primary rounded-0 px-3">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col event-grid-item" data-category="conference">
+          <div class="card h-100 hkcs-card overflow-hidden">
+            <img src="assets/images/event-conference.jpg" class="card-img-top"
+              alt="Annual ICT Symposium &amp; Digital Transformation Forum" style="height: 170px; object-fit: cover;">
+
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge text-white" style="background-color: var(--hkcs-accent);">
+                  Conference
+                </span>
+                <span class="badge bg-light text-dark border">
+                  4 CPD Hours
+                </span>
+              </div>
+
+              <h5 class="card-title fw-bold mb-2" style="color: var(--hkcs-primary); font-size: 1.05rem;">
+                Annual ICT Symposium &amp; Digital Forum
+              </h5>
+
+              <p class="small text-dark fw-semibold mb-1">
+                Date: 18 January 2027, 14:00 – 18:00
+              </p>
+              <p class="small text-muted mb-3">
+                Venue: Cyberport, Pok Fu Lam
+              </p>
+
+              <p class="card-text small text-secondary flex-grow-1">
+                Industry leaders and practitioners share insights on enterprise cloud architecture, data governance, and
+                smart city innovation in Hong Kong.
+              </p>
+
+              <div class="pt-3 border-top mt-2 d-flex justify-content-between align-items-center">
+                <span class="small fw-bold text-muted">Free for Members</span>
+                <a href="event-detail.html?id=1" class="btn btn-sm btn-hkcs-primary rounded-0 px-3">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="col event-grid-item" data-category="award">
+          <div class="card h-100 hkcs-card overflow-hidden">
+            <img src="assets/images/event-awards.jpg" class="card-img-top"
+              alt="Hong Kong ICT Excellence Awards Briefing" style="height: 170px; object-fit: cover;">
+
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge text-white" style="background-color: var(--hkcs-accent);">
+                  Awards
+                </span>
+                <span class="badge bg-light text-dark border">
+                  2 CPD Hours
+                </span>
+              </div>
+
+              <h5 class="card-title fw-bold mb-2" style="color: var(--hkcs-primary); font-size: 1.05rem;">
+                ICT Excellence Awards Information Session
+              </h5>
+
+              <p class="small text-dark fw-semibold mb-1">
+                Date: 29 January 2027, 16:00 – 18:00
+              </p>
+              <p class="small text-muted mb-3">
+                Venue: HKCS Secretariat / Hybrid
+              </p>
+
+              <p class="card-text small text-secondary flex-grow-1">
+                Learn about award categories, judging criteria, and submission tips for outstanding digital solutions,
+                fintech initiatives, and ICT teams.
+              </p>
+
+              <div class="pt-3 border-top mt-2 d-flex justify-content-between align-items-center">
+                <span class="small fw-bold text-muted">Free Admission</span>
+                <a href="event-detail.html?id=3" class="btn btn-sm btn-hkcs-primary rounded-0 px-3">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="col event-grid-item" data-category="student">
+          <div class="card h-100 hkcs-card overflow-hidden">
+            <img src="assets/images/event-student.jpg" class="card-img-top"
+              alt="Student &amp; Early-Career ICT Mentorship Forum" style="height: 170px; object-fit: cover;">
+
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge text-white" style="background-color: var(--hkcs-accent);">
+                  Student &amp; Career
+                </span>
+                <span class="badge bg-light text-dark border">
+                  3 CPD Hours
+                </span>
+              </div>
+
+              <h5 class="card-title fw-bold mb-2" style="color: var(--hkcs-primary); font-size: 1.05rem;">
+                Student &amp; Early-Career ICT Mentorship Forum
+              </h5>
+
+              <p class="small text-dark fw-semibold mb-1">
+                Date: 12 February 2027, 15:00 – 18:00
+              </p>
+              <p class="small text-muted mb-3">
+                Venue: Tsim Sha Tsui East, Kowloon
+              </p>
+
+              <p class="card-text small text-secondary flex-grow-1">
+                Connect with HKCS mentors and hiring managers to explore career pathways in software engineering, cloud
+                security, and IT consulting.
+              </p>
+
+              <div class="pt-3 border-top mt-2 d-flex justify-content-between align-items-center">
+                <span class="small fw-bold text-muted">Free for Students</span>
+                <a href="event-detail.html?id=4" class="btn btn-sm btn-hkcs-primary rounded-0 px-3">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Events Listing Section -->
+
+  <!-- Client-side category filter script for Events Listing Page -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const filterButtons = document.querySelectorAll(".event-filter-btn");
+      const eventItems = document.querySelectorAll(".event-grid-item");
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          // Update active button styling
+          filterButtons.forEach(function (btn) {
+            btn.classList.remove("btn-hkcs-primary", "active");
+            btn.classList.add("btn-hkcs-outline");
+          });
+          this.classList.remove("btn-hkcs-outline");
+          this.classList.add("btn-hkcs-primary", "active");
+
+          const selectedCategory = this.getAttribute("data-filter");
+
+          // Show or hide cards matching the chosen category
+          eventItems.forEach(function (item) {
+            const itemCategory = item.getAttribute("data-category");
+            if (selectedCategory === "all" || itemCategory === selectedCategory) {
+              item.classList.remove("d-none");
+            } else {
+              item.classList.add("d-none");
+            }
+          });
+        });
+      });
+    });
+  </script>
   <!-- End of Main Content Wrapper -->
 
   <footer>
